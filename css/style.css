@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+}
+
+h1 {
+    color: white;
+    font-family: 'Cormorant Unicase';
+    font-size: 2.5em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFFFFF;
+    font-size: 2em;
+    
+}
+
+a:hover{
+    color:#F25C05;
+}
+.background-container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+
+.black-gradient{
+    background: linear-gradient(90.51deg, #000000 16.96%, #000000 43.29%, rgba(0, 0, 0, 0.95) 60.84%, rgba(0, 0, 0, 0.306086) 85.11%, rgba(0, 0, 0, 0) 99.56%);
+    grid-column: 1/4;
+    grid-row: 1/5;
+    z-index: 1;
+}
+.hero-img{
+    background: url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center top;
+    grid-column: 2/5;
+    grid-row: 1/5;
+    z-index: 0;
+}
+.main-container{
+    grid-column: 1/5;
+    grid-row: 1/5;
+    z-index: 2;
+    /* main-grid */
+
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-gap: 8px;
+    margin: 32px;
+}
+.header-container{
+    grid-column: 1/13;
+    grid-row: 1/2;
+}
+.nav-bar{
+    /* flex-container */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.info-card{
+    /* grid-item */
+    grid-column: 2/6;
+    grid-row: 2/4;
+
+    /* flex-container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto
+}
+
+.button-gradient{
+    border-radius: 20px;
+    background: none;
+    border: 6px solid #038C8C;
+    color: #FFFFFF;
+    width: 40%;
+    height: 5vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:1.5vw;
+    grid-column: 3/5 ;
+    align-self: center;
+}
+
+.button-gradient:hover {
+    border: 6px solid #F25C05;
+}
+
+.iframe-container{
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flex-container{
+    align-self: center;
+    width: 60%;
+    overflow:hidden;
+    /* margin: 5%; */
+}
+
+nav ul li img {
+    width: 100%;
+    height: 100%;
+}
+/* HAMBURGUER MENU */
+#hamburguer-menu{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: none;
+    }
+
+nav #myLinks {
+    display: none;
+} 
+
+#logo-mobile{
+    display: none;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1024px) {
+    nav #myLinks {
+        display: none;
+        background-color: #F25C05;
+      } 
+    .nav-bar{
+        display: none;
+    }
+    p{
+        font-size: 1em;
+    }
+    h1{
+        font-size: 2em;
+    }
+    #hamburguer-menu{
+        display:unset;
+        }
+    
+    .header-container{
+        grid-column: 4/10;
+        grid-row: 1/2;
+        justify-content: center;
+    }
+    #logo-mobile{
+            display: unset;
+            width: 100%;  
+    }
+    .logo-container{
+        grid-column: 4/10;
+        grid-row: 1/2;
+    }
+    #menu-icon:hover {
+        fill: turquoise;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .iframe-container iframe, .iframe-container {
+        display: none;
+    }
+    p{
+        font-size: 0.8em;
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    .info-card{
+        grid-column: 1/10;
+        grid-row: 4/5;
+        justify-content: space-evenly;
+    }
+    .button-gradient{
+        font-size: 4vw;
+    }
+    .logo-container{
+        grid-column: 4/10;
+        grid-row: 1/2;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .iframe-container iframe, .iframe-container {
+        display: none;
+    }
+    .main-container{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+    }
+    .info-card{
+        grid-column: 1/5;
+        grid-row: 4/5;
+        justify-content: space-around;
+    }
+    #hamburguer-menu{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 50%;
+        height: 50%;
+        }
+    .header-container{
+        grid-column: 2/4;
+        grid-row: 1/2;
+        justify-content: center;
+    }
+    .info-card input{
+        width: 50%;
+        align-self: center;
+        
+    }
+    .logo-container{
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+}
